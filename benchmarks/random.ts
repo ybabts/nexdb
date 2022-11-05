@@ -14,6 +14,10 @@ export function Uint32() {
     return Math.abs((Math.random() * 0xFFFFFFFF) | 0);
 }
 
+export function Uint64() {
+    return crypto.getRandomValues(new BigUint64Array(1))[0];
+}
+
 export function Uint8A(length: number) {
     return new Uint8Array(length).fill(Uint8());
 }
