@@ -26,3 +26,18 @@ export function dataview(n: number, endian: e.endian = e.native): Uint8Array {
     i.dv.Uint8.setUint32(0, n, !!endian);
     return i.ta.Uint8.slice(0,4);
 }
+
+export function bigintbitshifting(n: bigint, endian: e.endian = e.native): Uint8Array {
+    if(endian) return new Uint8Array([
+        Number((n & 0x000000ffn) >> 0n),
+        Number((n & 0x0000ff00n) >> 8n),
+        Number((n & 0x00ff0000n) >> 16n),
+        Number((n & 0xff000000n) >> 24n)
+    ]);
+    return new Uint8Array([
+        Number((n & 0xff000000n) >> 24n),
+        Number((n & 0x00ff0000n) >> 16n),
+        Number((n & 0x0000ff00n) >> 8n),
+        Number((n & 0x000000ffn) >> 0n)
+    ]);
+}
