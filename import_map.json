@@ -1,0 +1,8 @@
+{
+    "imports": {
+        "x/": "https://deno.land/x/",
+        "t/": "./src/types/",
+        "std/": "https://deno.land/std@0.162.0/",
+        "bench/": "./benchmarks/"
+    }
+}

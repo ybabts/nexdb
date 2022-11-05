@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        
+    },
+    "importMap": "./import_map.json",
+    "tasks": {
+        "start": "deno run -A --watch=src/ --unstable app.ts",
+        "bench": "deno bench -A --unstable"
+    }
+}
